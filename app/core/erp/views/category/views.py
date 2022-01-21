@@ -28,7 +28,11 @@ class CategoryListViews(ListView):
     #     return Category.objects.filter(name__startswith='e')
 
     def post(self, request, *args, **kwargs):
-        data = {'name' : 'adrian'}
+        data = {}
+        try:
+            data = Category.objects.get(pk=request.POST['id']).toJSON()
+        except Exception as e:
+            data['error'] = str(e)
         return JsonResponse(data)
 
     def get_context_data(self, **kwargs):
