@@ -18,6 +18,7 @@ def category_list(request):
     return render(request, 'category/list.html', data)
 
 
+
 class CategoryListViews(ListView):
     model = Category
     template_name = 'category/list.html'
@@ -42,12 +43,13 @@ class CategoryListViews(ListView):
         context['title'] = 'listrado de Categorias'
         return context
 
+
+
 class CategoryCreateView(CreateView):
     model = Category
     form_class = CategoryForms
     template_name = 'category/create.html'
     success_url = reverse_lazy('erp:category_list')
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

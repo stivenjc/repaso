@@ -1,6 +1,6 @@
 from django.urls import path
 
-from core.erp.views.category.views import category_list, CategoryListViews, CategoryCreateView, CategoryCreateView1
+from core.erp.views.category.views import category_list, CategoryListViews, CategoryCreateView
 
 app_name = 'erp'
 urlpatterns = [
