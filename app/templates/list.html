@@ -50,7 +50,7 @@
         });
         $('.btnTest').on('click', function () {
             $.ajax({
-                url: '{% url 'category_list' %}',
+                url: '{% url 'erp:category_list' %}',
                 type : 'POST',
                 data: {id : 1},
                 dataType: 'json'
